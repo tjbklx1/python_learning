@@ -16,13 +16,13 @@ import sys,os
 #把'..'目录加入import模块的默认搜索路径中
 sys.path.insert(1,os.path.join(sys.path[0],'..'))
 #import 发送数据的函数
-from simpleNet.nbNetFramework import senddata_mh
+#from simpleNet.nbNetFramework import senddata_mh
 
 #agent 将会向上游的trans模块发送采集到的监控数据,这个是可以用的trans 地址是list
 trans_list01=['localhost:50000']
 
 class porterThread(threading.Thread):
-    def __init__(self,name,q,ql=None,interval=None):
+    def __init__(self,name,q,que_lock=None,interval=None):
         """init data """
         threading.Thread.__init__(self)
         self.name=name 
@@ -31,6 +31,10 @@ class porterThread(threading.Thread):
         self.sock_l=[None]
     
     def run(self):
+        """name to function 
+        collect local monotor data and put data in queue.
+        sendjson get data from queque and send to trans by socket.
+        """
         if self.name=='collect':
             self.put_data()
         else self.name=='sendjson':
@@ -58,10 +62,11 @@ class porterThread(threading.Thread):
                 #pdb.set_trace()
                 
                 #send monitor data 
-                sendData_mh()
+                #sendData_mh()
             time.sleep(self.interval)
     
     def startTh(self):
+        #init 10 queue ,超过10个队列没有被消费,put操作会阻塞
         que=Queue.Queue(10)
         que_lock=threading.lock()
         collect=porterThread('collect',que,que_lock,interval=3)
