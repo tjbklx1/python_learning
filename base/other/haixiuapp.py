@@ -5,7 +5,7 @@ import urllib2
 import urllib
 import re,os,time
 
-locateFolder="E:\\gitdir\\51reboot\\homework-arch-5\\3\\zhaoyushuang\\"
+locateFolder="E:\\temp\\"
 imageFolder="picture"
 imageFile="imageLink.txt"
 
