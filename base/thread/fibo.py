@@ -53,28 +53,32 @@ def main():
 if __name__=='__main__':
     main()
 
-
+#
 #**** single thread ****
-#starting fib at: Fri Nov 13 15:23:01 2015
+#starting fib at: Fri Nov 13 16:47:02 2015
 #233
-#fib finished at: Fri Nov 13 15:23:08 2015
-#starting fac at: Fri Nov 13 15:23:08 2015
+#fib finished at: Fri Nov 13 16:47:09 2015
+#starting fac at: Fri Nov 13 16:47:09 2015
 #1728
-#fac finished at: Fri Nov 13 15:23:13 2015
-#starting sum at: Fri Nov 13 15:23:13 2015
+#fac finished at: Fri Nov 13 16:47:14 2015
+#starting sum at: Fri Nov 13 16:47:14 2015
 #78
-#sum finished at: Fri Nov 13 15:23:14 2015
+#sum finished at: Fri Nov 13 16:47:15 2015
 #
 #**** MULTIPLE THREADS ****
-#start loop  fibstart loop    at :facstart loop   Fri Nov 13 15:23:14 2015 sum  at :   at :Fri Nov 13 15:23:14 2015
-# Fri Nov 13 15:23:14 2015
-#sum finish at:  Fri Nov 13 15:23:15 2015
-#fac finish at:  Fri Nov 13 15:23:19 2015
-#fib finish at:  Fri Nov 13 15:23:21 2015
+#
+#start loop fib at : Fri Nov 13 16:47:15 2015
+#
+#start loop fac at : Fri Nov 13 16:47:15 2015
+#
+#start loop sum at : Fri Nov 13 16:47:15 2015
+#sum finish at: Fri Nov 13 16:47:16 2015
+#fac finish at: Fri Nov 13 16:47:19 2015
+#fib finish at: Fri Nov 13 16:47:22 2015
 #233
 #1728
 #78
-#all done at: Fri Nov 13 15:23:21 2015
+#all done at: Fri Nov 13 16:47:22 2015
 
 
 

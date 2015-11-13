@@ -14,6 +14,6 @@ class MyThread(threading.Thread):
         return self.res
 
     def run(self):
-        print 'start loop ', self.name, ' at :',ctime()
+        print '\nstart loop %s at : %s' % ( self.name,ctime() )
         self.res=apply(self.func,self.args)
-        print self.name,'finish at: ', ctime()
+        print '%s finish at: %s' % ( self.name,ctime() )
