@@ -15,15 +15,17 @@ def main():
   threads=[]
   nloops=range(len(loops))
   
+  # create all thread 
   for i in nloops:  
     t=threading.Thread(target=loop,args=(i,loops[i]))
     threads.append(t)
   
+  #start all thread 
   for i in nloops:  
     threads[i].start()
 
-  for i in nloops:          # wait for all
-    threads[i].join()       # threads to finish
+  for i in nloops: 
+    threads[i].join()       #  wait for all threads to finish
 
   print 'all done at:',ctime()
 

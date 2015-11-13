@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# add lock for every thread 
+
 from time import sleep,ctime
 import thread
 
@@ -16,16 +18,19 @@ def main():
   locks=[]
   nloops=range(len(loops))
   
+  # add lock for every thread 
   for i in nloops:  
     lock=thread.allocate_lock()
     lock.acquire()
     locks.append(lock)
   
+  #start every thread .
   for i in nloops:  
     thread.start_new_thread(loop,(i,loops[i],locks[i]))
 
   for i in nloops: 
-    while locks[i].locked():pass
+    while locks[i].locked():
+        pass
 
   print 'all done at:',ctime()
 

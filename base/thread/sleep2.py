@@ -17,7 +17,7 @@ def main():
   print 'start at:',ctime()
   thread.start_new_thread(loop0,())
   thread.start_new_thread(loop1,())
-  sleep(6)
+  sleep(6)  # wait two thread end.
   print 'all done at:',ctime()
 
 if __name__=='__main__':
@@ -31,3 +31,14 @@ if __name__=='__main__':
 #loop 0 done at: Mon Nov 09 14:36:20 2015
 #all done at: Mon Nov 09 14:36:22 2015
 #
+
+
+
+
+# donot wait two thread end
+# #sleep(6)  # wait two thread end.
+
+
+#start at: Fri Nov 13 10:42:14 2015
+#all done at:start loop 0 at:start loop 1 at:  Fri Nov 13 10:42:14 2015 Fri Nov 1
+#Fri Nov 13 10:42:14 2015
