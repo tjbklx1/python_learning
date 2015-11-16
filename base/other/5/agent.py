@@ -35,9 +35,10 @@ class porterThread(threading.Thread):
         collect local monotor data and put data in queue.
         sendjson get data from queque and send to trans by socket.
         """
-        if self.name=='collect':
+        print self.name
+        if self.name == 'collect':
             self.put_data()
-        else self.name=='sendjson':
+        elif self.name == 'sendjson':
             self.get_data()
     
     def put_data(self):
@@ -45,44 +46,47 @@ class porterThread(threading.Thread):
         m=mon()
         atime=int(time.time())
         while 1 :
-            data=m.runAllGet()
+            #data=m.runAllGet()
+            data="memory:16G"
             self.q.put(data)
             #处理时间间隔的频率问题
             btime=int(time.time())
+            print "get monitor data %s " %(data)
             time.sleep(self.interval-( (btime-atime)%self.interval ))
     
     
     def get_data(self):
         while 1:
-            print "get"
+            #print "get"
             if not self.q.empty():
                 data=self.q.get()
-                print data 
+                print "send data ... %s " %(data) 
                 #debug 
                 #pdb.set_trace()
                 
                 #send monitor data 
                 #sendData_mh()
+                
             time.sleep(self.interval)
     
-    def startTh(self):
-        #init 10 queue ,超过10个队列没有被消费,put操作会阻塞
-        que=Queue.Queue(10)
-        que_lock=threading.lock()
-        collect=porterThread('collect',que,que_lock,interval=3)
-        #start collected thread 
-        collect.start()
-        
-        time.sleep(0.5)
-        sendjson=porterThread('sendjson',que,que_lock,interval=3)
-        #start send data
-        sendjson.start()
-        
-        collect.join()
-        sendjson.join()
+def startTh():
+    #init 10 queue ,超过10个队列没有被消费,put操作会阻塞
+    que=Queue.Queue(10)
+    que_lock=threading.Lock()
+    collect=porterThread('collect',que,que_lock,interval=3)
+    #start collected thread 
+    collect.start()
+    
+    time.sleep(0.5)
+    sendjson=porterThread('sendjson',que,que_lock,interval=3)
+    #start send data
+    sendjson.start()
+    
+    collect.join()
+    sendjson.join()
 
 
-if __name__="__main__":
+if __name__=="__main__":
     startTh()
 
 

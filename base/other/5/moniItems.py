@@ -125,7 +125,7 @@ class mon:
         if time.time()-userDefine_check_time>300 or userDefine_json==[]:
             url='http://reboot:50004/userdefine_listitem'                  #???
             try:
-                #json.loads :   ???
+                #json.loads 
                 userDefine_json=json.loads(urllib.urlopen(url).read())
                 userDefine_check_time=time.time()
             except:
@@ -155,7 +155,7 @@ class mon:
                 if not item:
                     continue
                 else:
-                    key,val=item.split(:)
+                    key,val=item.split(":")
                     data["UD_"+key]=val
 
         return data
