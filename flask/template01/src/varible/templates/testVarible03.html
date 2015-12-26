@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>index</title>
+</head>
+<body>
+    <div>{{dic['title']}}</div>
+    <div>
+        {%for item in dic%}
+        <li>{{item}}</li>
+        {%endfor%}
+    </div>
+    
+    <div>{{dic['title']}}</div>
+    <div>
+        {%for key,value in dic.items()%}
+        <li>{{key}}:{{value}}</li>
+        {%endfor%}
+    </div>
+</body>
+<footer>
+ 
+</footer>
+</html>
