@@ -1,4 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/bootstrapdemo/hello.py=utf-8
+encoding//src/template01/template01.py=utf-8
+encoding//src/varible/testBase.py=utf-8
 encoding//src/varible/testImg.py=utf-8
+encoding//src/varible/testVarible01.py=utf-8
 encoding//src/varible/testVarible02.py=utf-8
 encoding//src/varible/testVarible03.py=utf-8
+encoding//src/webform01/hello.py=utf-8
+encoding//src/webform01/hello_bak.py=utf-8

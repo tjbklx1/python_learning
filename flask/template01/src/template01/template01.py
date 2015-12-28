@@ -1,3 +1,6 @@
+#!/usr/bin/evn python
+#coding=utf-8
+
 from flask import Flask,render_template
 
 app=Flask(__name__)
@@ -12,5 +15,4 @@ def user(name):
 
 
 if __name__=='__main__':
-    app.run()
-    # python template01 runserver --host 0.0.0.0
+    app.run(debug=True)
