@@ -13,5 +13,5 @@ lm = LoginManager()
 lm.init_app(app)
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
-from app05 import views, models
+from app import views, models
 
