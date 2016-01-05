@@ -1,4 +1,4 @@
-cat .vimrc 
+cat .vimrc
 
 set tabstop=4
 set expandtab
@@ -15,3 +15,34 @@ set completeopt=preview
 set ai
 set hls
 set nu
+set cursorcolumn
+set autoindent
+
+let $author_name="tukxan"
+let $author_email="wolf_2004@aliyun.com"
+autocmd BufNewFile *.py,*.sh exec ":call SetTitle()"
+function SetTitle()
+    if &filetype == 'sh'
+        call setline(1,"\##################################################")
+        call append(line("."),  "\# File Name       : ".expand("%") )
+        call append(line(".")+1,"\# Author          : ".$author_name  )
+        call append(line(".")+2,"\# Mail            : ".$author_email  )
+        call append(line(".")+3,"\# Created Time    : ".strftime("%Y-%m-%d %H:%M:%S")  )
+        call append(line(".")+4,"\# Description     : ")
+        call append(line(".")+5,"\#=================================================="  )
+        call append(line(".")+6,"\#!/bin/bash"  )
+        call append(line(".")+7,"")
+    else
+        call setline(1,"\##################################################")
+        call append(line("."),  "\# File Name       : ".expand("%") )
+        call append(line(".")+1,"\# Author          : ".$author_name  )  
+        call append(line(".")+2,"\# Mail            : ".$author_email  ) 
+        call append(line(".")+3,"\# Created Time    : ".strftime("%Y-%m-%d %H:%M:%S")  )
+        call append(line(".")+4,"\# Description     : ") 
+        call append(line(".")+5,"\#=================================================="  )
+        call append(line(".")+6,"\#!/usr/bin/python"  ) 
+        call append(line(".")+7,"") 
+    endif
+
+    autocmd BufNewFile * normal G
+endfunction
