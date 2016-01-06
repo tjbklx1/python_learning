@@ -31,7 +31,8 @@ function SetTitle()
         call append(line(".")+4,"\# Description     : ")
         call append(line(".")+5,"\#=================================================="  )
         call append(line(".")+6,"\#!/bin/bash"  )
-        call append(line(".")+7,"")
+        call append(line(".")+7,"\#coding=utf-8")
+        call append(line(".")+8,"")
     else
         call setline(1,"\##################################################")
         call append(line("."),  "\# File Name       : ".expand("%") )
@@ -41,7 +42,8 @@ function SetTitle()
         call append(line(".")+4,"\# Description     : ") 
         call append(line(".")+5,"\#=================================================="  )
         call append(line(".")+6,"\#!/usr/bin/python"  ) 
-        call append(line(".")+7,"") 
+        call append(line(".")+7,"\#coding=utf-8")
+        call append(line(".")+8,"") 
     endif
 
     autocmd BufNewFile * normal G
