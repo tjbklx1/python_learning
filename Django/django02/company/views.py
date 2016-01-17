@@ -104,9 +104,18 @@ def host(request,page):
     
 #     page=mark_safe("<a href='/company/host/1'>1</a>") # 只显示首页时
     page_html=[]
+    
+    #首页
+    first_html="<a href='/company/host/%s'>首页</a>" %(1,)
+    page_html.append(first_html)
+    #主体页码
     for i in range(all_page_count):
         a_html="<a href='/company/host/%s'>%s</a>" %(i+1,i+1)
         page_html.append(a_html)
+        
+    #尾页
+    end_html="<a href='/company/host/%s'>尾页</a>" %(all_page_count,)
+    page_html.append(end_html)
     page=mark_safe(''.join(page_html))
     ret['page']=page
     return render_to_response('company/host.html',ret)
