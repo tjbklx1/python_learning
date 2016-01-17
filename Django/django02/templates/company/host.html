@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+
+<body>
+	<h1>欢迎登陆主机管理系统</h1>
+	<div>
+		<h2>添加主机</h2>
+		<h6 style='color:red'>{{ status }} </h6>
+		
+		<form action='/company/host/' method='POST'>
+			<div>
+				<div>
+					<input name='hostname' placeholder='hostname'/>
+				</div>
+				<div>
+					<input name='ip' placeholder='ip'/>
+				</div>
+				<div>
+					<select name='group'>
+						{% for item in group  %}
+							<option values="{{ item.id}}"> {{item.groupname}} </option>
+						{% endfor %}
+					</select>
+				</div>
+				<div>
+					<input type='submit' values='添加' />
+				<div>
+			</div>
+		</form>
+	</div>
+
+	<div class="list">
+		<h2>主机列表</h2>
+		<table border='2'>
+			<tr>
+				<td>主机名称</td>
+				<td>IP</td>
+				<td>用户组ID</td>
+				<td>所属用户组</td>
+			<tr>
+			{% for item in data %}
+			<tr>
+				<td>{{ item.hostname }}</td>
+				<td>{{ item.ip }}</td>
+				<td>{{ item.user_group_id }}</td>
+				<td>{{ item.user_group.groupname }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	<p><a href='/company/index'>index</a></p>
+</body>
+
+</html>
