@@ -4,6 +4,8 @@
 from django.shortcuts import render, render_to_response, redirect
 from company.models import *
 from django.http.response import HttpResponse
+from company.common import *
+from django.utils.safestring import mark_safe
 
 # Create your views here.
 def register(request):
@@ -57,10 +59,10 @@ def index(request):
     return render_to_response('company/index.html')
 
 
-def host(request):
+def host(request,page):
     print 'host'
     # data 用做host列表的展示,group作为group下拉选项的展示
-    ret={'status':'','data':None,'group':None}
+    ret={'status':'','data':None,'group':None,'count':0,'page':0}
     usergroup =UserGroup.objects.all()
     ret['group']=usergroup
     
@@ -77,10 +79,36 @@ def host(request):
             Assert.objects.create(hostname=hostname,ip=ip,user_group=groupObj)
         else:
             ret['status']='hostname or ip cannot be null'
+    #以下是host列表的展示,同时也练习分页        
     
-    data=Assert.objects.all()
+    print "page: %s" % page
+    page=try_int(page,1)
+    per_item=5  # 每一页显示的条目数
+    
+    start=(page-1)*per_item
+    end=page*per_item
+    
+    count=Assert.objects.all().count()
+    data=Assert.objects.all()[start:end]
     ret['data']=data
-
+    ret['count']=count
+    
+    #总页数
+#     all_page=count/per_item
+#     all_page=count/per_item+1
+    temp=divmod(count, per_item)
+    if temp[1]==0:
+        all_page_count=temp[0]
+    else:
+        all_page_count=temp[0]+1
+    
+#     page=mark_safe("<a href='/company/host/1'>1</a>") # 只显示首页时
+    page_html=[]
+    for i in range(all_page_count):
+        a_html="<a href='/company/host/%s'>%s</a>" %(i+1,i+1)
+        page_html.append(a_html)
+    page=mark_safe(''.join(page_html))
+    ret['page']=page
     return render_to_response('company/host.html',ret)
     
     

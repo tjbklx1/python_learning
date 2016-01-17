@@ -50,3 +50,9 @@ urlpatterns = [
 
 is_empty=all([user,pwd])
 
+
+后台传递HTML标签
+from django.utils.safestring import mark_safe
+page=mark_safe("<a href='/company/host/1'>1</a>")
+
+

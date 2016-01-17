@@ -24,7 +24,7 @@ from company import views
 urlpatterns = [
     url(r'^login/', views.login),
     url(r'^index/', views.index),
-    url(r'^host/', views.host),
+    url(r'^host/(\d*)', views.host),
     url(r'^user/', views.user),
     url(r'^group/', views.group),
     url(r'^register/', views.register),
