@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//company/common.py=utf-8
+encoding//company/html_helper.py=utf-8
 encoding//company/models.py=utf-8
 encoding//company/urls.py=utf-8
 encoding//company/views.py=utf-8
