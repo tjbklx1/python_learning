@@ -2,6 +2,26 @@
 <html>
 <head>
 <title>Title of the document</title>
+	<style>
+		body{
+			font-size:.85em;
+			font-family:"Times New Roman",Georgia,Serif;
+			color:#232323;
+			background-color:#fff
+		}
+		
+		#Pageing A{
+			background-color:#008844;
+			border:1px solid white;
+			text-decoration:none;
+			color:White;
+			padding:.1em .6em .2em .6em;
+		}
+		#Pageing A.selected {
+			background-color:#AA7700;
+		}
+	
+	</style>
 </head>
 
 <body>
@@ -51,7 +71,9 @@
 			{% endfor %}
 		</table>
 		<h4>总条数:{{ count }}</h4>
-		{{ page }}
+		<div id='Pageing'>
+			{{ page }}
+		</div>
 	</div>
 	<p><a href='/company/index'>index</a></p>
 </body>
