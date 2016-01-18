@@ -4,7 +4,7 @@
 from django.utils.safestring import mark_safe
 
 class PageInfo:
-    def __init__(self,current_page,all_count,per_items=1):
+    def __init__(self,current_page,all_count,per_items=5):
         
 #         per_item=5  # 每一页显示的条目数
 #         start=(page-1)*per_item

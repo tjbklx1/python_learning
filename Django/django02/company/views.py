@@ -45,19 +45,28 @@ def login(request):
         if is_empty:
             count =UserInfo.objects.filter(username=user,password=pwd).count()
             if count == 1:
+#                 request.session['is_login']=True
+                request.session['is_login']={'user':user}
                 return redirect('/company/index')
             else:
                 ret['status']='username or password error'
         else:
             ret['status']='username or password cannot empty'
 
-    
     return render_to_response('company/login.html',ret)
+
+def logout(request):
+    del request.session['is_login']
+    return redirect('/company/login/')
      
 def index(request):
     print 'index'
-    return render_to_response('company/index.html')
-
+#     is_login=request.session.get('is_login',None)
+    user=request.session.get('is_login',None)
+    if user:
+        return render_to_response('company/index.html',{'username':user['user']})
+    else:
+        return redirect('/company/login/')
 
 def host(request,page):
     print 'host'
