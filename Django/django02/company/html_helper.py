@@ -3,6 +3,39 @@
 
 from django.utils.safestring import mark_safe
 
+class PageInfo:
+    def __init__(self,current_page,all_count,per_items=1):
+        
+#         per_item=5  # 每一页显示的条目数
+#         start=(page-1)*per_item
+#         end=page*per_item
+    
+        self.current_page=current_page
+        self.all_count=all_count
+        self.per_items=per_items
+        
+    @property
+    def start(self):
+        return (self.current_page-1)*self.per_items
+    
+    @property
+    def end(self):
+        return self.per_items*self.current_page
+    
+    @property
+    def all_page_count(self):
+        
+#    总页数
+#     all_page=count/per_item
+#     all_page=count/per_item+1
+
+        temp=divmod(self.all_count,self.per_items)
+        if temp[1]==0:
+            all_page_count=temp[0]
+        else:
+            all_page_count=temp[0]+1
+        return all_page_count
+
 
 def Pager(page , all_page_count):
     # page:当前页， all_page_count：总页数
@@ -21,8 +54,26 @@ def Pager(page , all_page_count):
         prev_html="<a href='/company/host/%s'>上一页</a>" %(page-1)
     page_html.append(prev_html)
     
+    begin=page-5
+    end=page+5
+    
+    if all_page_count<11:
+        begin=0
+        end=all_page_count
+    else:
+        if page<6:
+            begin=0
+            end= 11
+        else:
+            if page+6>all_page_count:
+                begin=page-6
+                end=all_page_count
+            else:
+                begin=page-6
+                end=page+5
+    
     #主体页码
-    for i in range(all_page_count):
+    for i in range(begin,end):
         if page==i+1:
             a_html="<a class='selected' href='/company/host/%s'>%s</a>" %(i+1,i+1)
         else:

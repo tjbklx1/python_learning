@@ -81,28 +81,17 @@ def host(request,page):
             ret['status']='hostname or ip cannot be null'
     #以下是host列表的展示,同时也练习分页        
     
-    print "page: %s" % page
+#     print "page: %s" % page
     page=try_int(page,1)
-    per_item=5  # 每一页显示的条目数
-    
-    start=(page-1)*per_item
-    end=page*per_item
-    
     count=Assert.objects.all().count()
-    data=Assert.objects.all()[start:end]
-    ret['data']=data
-    ret['count']=count
-    
-    #总页数
-#     all_page=count/per_item
-#     all_page=count/per_item+1
-    temp=divmod(count, per_item)
-    if temp[1]==0:
-        all_page_count=temp[0]
-    else:
-        all_page_count=temp[0]+1
 
-    ret['page']=html_helper.Pager(page, all_page_count)
+    pageObj=html_helper.PageInfo(page,count)   
+#     data=Assert.objects.all()[pageObj.start():pageObj.end()]
+#     ret['count']=pageObj.all_page_count()
+    data=Assert.objects.all()[pageObj.start:pageObj.end]
+    ret['count']=pageObj.all_page_count
+    ret['data']=data
+    ret['page']=html_helper.Pager(page, pageObj.all_page_count)
     return render_to_response('company/host.html',ret)
     
     
