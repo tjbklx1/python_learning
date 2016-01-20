@@ -53,7 +53,9 @@ def login(request):
         else:
             ret['status']='username or password cannot empty'
 
-    return render_to_response('company/login.html',ret)
+    response=render_to_response('company/login.html',ret)           
+    response.set_cookie('k1','v1')
+    return response
 
 def logout(request):
     del request.session['is_login']
@@ -61,9 +63,11 @@ def logout(request):
      
 def index(request):
     print 'index'
+    print request.COOKIES
 #     is_login=request.session.get('is_login',None)
     user=request.session.get('is_login',None)
     if user:
+        
         return render_to_response('company/index.html',{'username':user['user']})
     else:
         return redirect('/company/login/')
