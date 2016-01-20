@@ -5,6 +5,7 @@ encoding//company/models.py=utf-8
 encoding//company/urls.py=utf-8
 encoding//company/views.py=utf-8
 encoding//django02/urls.py=utf-8
+encoding//middleware/testMiddleware.py=utf-8
 encoding//myforms/forms.py=utf-8
 encoding//myforms/urls.py=utf-8
 encoding//myforms/views.py=utf-8

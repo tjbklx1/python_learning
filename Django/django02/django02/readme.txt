@@ -180,3 +180,36 @@ Change that to False, and only the initial error message will be displayed.
 You can customize this page using the CSRF_FAILURE_VIEW setting.
 
 
+middleware
+
+
+from django.http.response import HttpResponse
+
+class testMiddleware(object):
+    
+    def process_request(self,request):
+        print "1.process_request"
+        
+    def process_view(self, request, callback, callback_args, callback_kwargs):
+        print "2.process_view"
+        
+    def process_exception(self, request, exception):
+        print "3.process_exception"
+     
+    def process_response(self, request, response):
+        print "4.process_response"
+        return response   
+        
+注册
+MIDDLEWARE_CLASSES = [
+	....,
+    'middleware.testMiddleware.testMiddleware',
+]
+
+运行结果
+
+1.process_request
+2.process_view
+host
+10
+4.process_response
