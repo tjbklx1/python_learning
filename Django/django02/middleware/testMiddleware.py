@@ -7,6 +7,8 @@ class testMiddleware(object):
     
     def process_request(self,request):
         print "1.process_request"
+#         print "404"
+#         return HttpResponse("404")
         
     def process_view(self, request, callback, callback_args, callback_kwargs):
         print "2.process_view"
