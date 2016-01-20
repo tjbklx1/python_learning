@@ -56,3 +56,22 @@ from django.utils.safestring import mark_safe
 page=mark_safe("<a href='/company/host/1'>1</a>")
 
 
+
+
+session 
+
+Browser-Length Sessions vs. Persistent Sessions
+
+You might have noticed that the cookie Google sent us 
+at the beginning of this chapter contained expires=Sun, 17-Jan-2038 19:14:07 GMT;. 
+Cookies can optionally contain an expiration date that advises the browser on when to remove the cookie. 
+If a cookie doesn’t contain an expiration value, the browser will expire it when the user closes his or her browser window. 
+You can control the session framework’s behavior in this regard with the SESSION_EXPIRE_AT_BROWSER_CLOSE setting.
+
+By default, SESSION_EXPIRE_AT_BROWSER_CLOSE is set to False, 
+which means session cookies will be stored in users’ browsers for SESSION_COOKIE_AGE seconds 
+(which defaults to two weeks, or 1,209,600 seconds).
+Use this if you don’t want people to have to log in every time they open a browser.
+
+If SESSION_EXPIRE_AT_BROWSER_CLOSE is set to True, Django will use browser-length cookies.
+
