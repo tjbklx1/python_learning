@@ -74,6 +74,8 @@ def index(request):
 
 def host(request,page):
     print 'host'
+    print request.COOKIES.get('pager_num',10)
+    per_item=try_int(request.COOKIES.get('pager_num',10),1)
     # data 用做host列表的展示,group作为group下拉选项的展示
     ret={'status':'','data':None,'group':None,'count':0,'page':0}
     usergroup =UserGroup.objects.all()
@@ -98,7 +100,7 @@ def host(request,page):
     page=try_int(page,1)
     count=Assert.objects.all().count()
 
-    pageObj=html_helper.PageInfo(page,count)   
+    pageObj=html_helper.PageInfo(page,count,per_item)   
 #     data=Assert.objects.all()[pageObj.start():pageObj.end()]
 #     ret['count']=pageObj.all_page_count()
     data=Assert.objects.all()[pageObj.start:pageObj.end]

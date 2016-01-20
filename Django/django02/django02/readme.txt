@@ -75,3 +75,77 @@ Use this if you don’t want people to have to log in every time they open a bro
 
 If SESSION_EXPIRE_AT_BROWSER_CLOSE is set to True, Django will use browser-length cookies.
 
+
+
+insert into company_assert (hostname, ip, user_group_id) values('test1','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test2','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test3','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test4','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test5','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test6','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test7','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test8','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test9','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test10','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test11','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test12','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test13','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test14','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test15','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test16','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test17','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test18','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test19','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test20','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test21','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test22','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test23','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test24','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test25','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test26','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test27','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test28','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test29','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test30','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test31','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test32','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test33','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test34','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test35','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test36','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test37','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test38','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test39','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test40','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test41','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test42','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test43','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test44','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test45','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test46','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test47','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test48','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test49','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test50','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test51','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test52','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test53','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test54','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test55','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test56','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test57','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test58','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test59','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test60','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test61','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test62','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test63','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test64','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test65','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test66','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test67','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test68','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test69','1.1.1.1','1');
+insert into company_assert (hostname, ip, user_group_id) values('test70','1.1.1.1','1');
+
+
