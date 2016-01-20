@@ -6,6 +6,9 @@
 
 <body>
 	<form action='/company/login/' method='POST'>
+		
+		{% csrf_token %} 
+	
 		<div>
 			<div>
 				<input name='username' placeholder='用户名'/>

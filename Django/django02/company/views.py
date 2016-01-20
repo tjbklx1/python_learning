@@ -4,6 +4,7 @@
 from django.shortcuts import render, render_to_response, redirect
 from company.models import *
 from django.http.response import HttpResponse
+from django.template.context import RequestContext
 from company.common import *
 from company import html_helper
 
@@ -53,7 +54,7 @@ def login(request):
         else:
             ret['status']='username or password cannot empty'
 
-    response=render_to_response('company/login.html',ret)           
+    response=render_to_response('company/login.html',ret,context_instance=RequestContext(request))           
     response.set_cookie('k1','v1')
     return response
 
